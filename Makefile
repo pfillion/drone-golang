@@ -1,6 +1,5 @@
 SHELL = /bin/sh
 .SUFFIXES:
-.SUFFIXES: .c .o
 .PHONY: help
 .DEFAULT_GOAL := help
 
@@ -33,8 +32,6 @@ shell: ## Run shell command in the container
 	docker run --rm --name $(CONTAINER_NAME)-$(CONTAINER_INSTANCE) -i -t $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(VERSION) /bin/sh
 
 test: ## Run all tests
-	docker run --rm --name $(CONTAINER_NAME)-$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(VERSION) go version
-
-release: ## Build and push the image to a registry
-	make build
-	make push
+	bats tests
+	
+release: build push ## Build and push the image to a registry
