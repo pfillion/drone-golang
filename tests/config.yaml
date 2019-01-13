@@ -1,0 +1,35 @@
+schemaVersion: "2.0.0"
+
+metadataTest:
+  env:
+    - key: CGO_ENABLED
+      value: 0
+  labels:
+    - key: 'org.label-schema.build-date'
+      value: '.*'
+      isRegex: true
+    - key: 'org.label-schema.vcs-ref'
+      value: '.*'
+      isRegex: true  
+    - key: 'org.label-schema.version'
+      value: '.*'
+      isRegex: true    
+  exposedPorts: []
+  volumes: []
+  entrypoint: []
+  cmd: ["/bin/sh"]
+  workdir: ""
+
+commandTests:
+  - name: "git is functional"
+    command: "git"
+    args: ["--version"]
+    expectedOutput: ["git version .*"]
+  - name: "make is functional"
+    command: "make"
+    args: ["-v"]
+    expectedOutput: ["GNU Make .*"]
+  - name: "go is functional"
+    command: "go"
+    args: ["version"]
+    expectedOutput: ["go version go.* linux/amd64"]

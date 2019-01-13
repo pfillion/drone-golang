@@ -4,6 +4,7 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := help
 
 # Docker parameters
+ROOT_FOLDER=$(shell pwd)
 NS ?= pfillion
 VERSION ?= latest
 IMAGE_NAME ?= drone-golang
@@ -32,6 +33,13 @@ shell: ## Run shell command in the container
 	docker run --rm --name $(CONTAINER_NAME)-$(CONTAINER_INSTANCE) -i -t $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(VERSION) /bin/sh
 
 test: ## Run all tests
-	bats tests
+	docker run \
+		--rm \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		-v $(ROOT_FOLDER)/tests:/tests \
+		gcr.io/gcp-runtimes/container-structure-test:latest \
+			test \
+			--image $(NS)/$(IMAGE_NAME):$(VERSION) \
+			--config /tests/config.yaml
 	
 release: build push ## Build and push the image to a registry
