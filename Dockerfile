@@ -1,4 +1,4 @@
-FROM golang:alpine3.8
+FROM golang:alpine
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
