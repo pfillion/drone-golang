@@ -1,19 +1,22 @@
-FROM golang:alpine
+FROM golang:1.15.2-alpine3.12
 
-# Build-time metadata as defined at http://label-schema.org
-ARG BUILD_DATE
-ARG VCS_REF
-ARG VERSION
+# Build-time metadata as defined at https://github.com/opencontainers/image-spec
+ARG DATE
+ARG CURRENT_VERSION_MICRO
+ARG COMMIT
+ARG AUTHOR
+
 LABEL \
-    org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.name="drone-golang" \
-    org.label-schema.description="Docker in Docker with more tools for Drone.io" \
-    org.label-schema.url="https://hub.docker.com/r/pfillion/drone-golang" \
-    org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="https://github.com/pfillion/drone-golang" \
-    org.label-schema.vendor="pfillion" \
-    org.label-schema.version=$VERSION \
-    org.label-schema.schema-version="1.0"
+    org.opencontainers.image.created=$DATE \
+    org.opencontainers.image.url="https://hub.docker.com/r/pfillion/drone-golang" \
+    org.opencontainers.image.source="https://github.com/pfillion/drone-golang" \
+    org.opencontainers.image.version=$CURRENT_VERSION_MICRO \
+    org.opencontainers.image.revision=$COMMIT \
+    org.opencontainers.image.vendor="pfillion" \
+    org.opencontainers.image.title="drone-golang" \
+    org.opencontainers.image.description="golang with more tools for Drone.io " \
+    org.opencontainers.image.authors=$AUTHOR \
+    org.opencontainers.image.licenses="MIT"
 
 ENV CGO_ENABLED 0
 

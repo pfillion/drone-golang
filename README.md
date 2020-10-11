@@ -1,8 +1,11 @@
 # drone-golang
 
 [![Build Status](https://drone.pfillion.com/api/badges/pfillion/drone-golang/status.svg)](https://drone.pfillion.com/pfillion/drone-golang)
-[![microbadger image](https://images.microbadger.com/badges/image/pfillion/drone-golang.svg)](https://microbadger.com/images/pfillion/drone-golang "Get your own image badge on microbadger.com")
-[![microbadger version](https://images.microbadger.com/badges/version/pfillion/drone-golang.svg)](https://microbadger.com/images/pfillion/drone-golang "Get your own version badge on microbadger.com")
-[![microbadger commit](https://images.microbadger.com/badges/commit/pfillion/drone-golang.svg)](https://microbadger.com/images/pfillion/drone-golang "Get your own commit badge on microbadger.com")
+![GitHub](https://img.shields.io/github/license/pfillion/drone-golang)
+[![GitHub last commit](https://img.shields.io/github/last-commit/pfillion/drone-golang?logo=github)](https://github.com/pfillion/drone-golang "GitHub projet")
+
+[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/pfillion/drone-golang/latest?logo=docker)](https://hub.docker.com/r/pfillion/drone-golang "Docker Hub Repository")
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/pfillion/drone-golang/latest?logo=docker)](https://hub.docker.com/r/pfillion/drone-golang "Docker Hub Repository")
+[![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/pfillion/drone-golang/latest?logo=docker)](https://microbadger.com/images/pfillion/drone-golang "Get your own commit badge on microbadger.com")
 
 golang with more tools for Drone.io
