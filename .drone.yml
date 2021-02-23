@@ -47,6 +47,7 @@ services:
 - name: docker
   image: pfillion/drone-dind
   privileged: true
+  network_mode: bridge
   volumes:
   - name: docker_volume
     path: /var/run

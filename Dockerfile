@@ -1,4 +1,4 @@
-FROM golang:1.15.2-alpine3.12
+FROM golang:1.15.8-alpine3.13
 
 # Build-time metadata as defined at https://github.com/opencontainers/image-spec
 ARG DATE
