@@ -1,9 +1,6 @@
 schemaVersion: "2.0.0"
 
 metadataTest:
-  env:
-    - key: CGO_ENABLED
-      value: 0
   labels:
     - key: 'org.opencontainers.image.created'
       value: '.*'

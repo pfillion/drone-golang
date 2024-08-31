@@ -6,6 +6,5 @@
 
 [![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/pfillion/drone-golang/latest?logo=docker)](https://hub.docker.com/r/pfillion/drone-golang "Docker Hub Repository")
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/pfillion/drone-golang/latest?logo=docker)](https://hub.docker.com/r/pfillion/drone-golang "Docker Hub Repository")
-[![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/pfillion/drone-golang/latest?logo=docker)](https://microbadger.com/images/pfillion/drone-golang "Get your own commit badge on microbadger.com")
 
 golang with more tools for Drone.io

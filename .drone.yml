@@ -37,12 +37,6 @@ steps:
   commands:
   - make push
 
-- name: notify-microbadger
-  image: plugins/webhook
-  settings:
-    urls:
-      from_secret: webhook_urls
-
 services:
 - name: docker
   image: pfillion/drone-dind

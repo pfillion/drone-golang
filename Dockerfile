@@ -1,4 +1,7 @@
-FROM golang:1.16.0-alpine3.13
+ARG CURRENT_VERSION_MICRO
+ARG VERSION_ALPINE
+
+FROM golang:${CURRENT_VERSION_MICRO}-alpine${VERSION_ALPINE}
 
 # Build-time metadata as defined at https://github.com/opencontainers/image-spec
 ARG DATE
@@ -18,8 +21,7 @@ LABEL \
     org.opencontainers.image.authors=$AUTHOR \
     org.opencontainers.image.licenses="MIT"
 
-ENV CGO_ENABLED 0
-
 RUN apk add --update --no-cache \
     git \
-    make
+    make \
+    libc6-compat
